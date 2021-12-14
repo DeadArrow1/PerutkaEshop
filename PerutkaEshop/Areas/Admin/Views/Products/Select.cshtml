@@ -1,0 +1,68 @@
+﻿@model IList<Product>
+@{
+    ViewData["Title"] = "Products";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>This page shows all products items for admin</p>
+
+
+<img style="display: block; margin-left: auto; margin-right: auto;margin-bottom: 10px; width: 40%;" src="~/img/impressive-very-nice.gif" />
+
+<a asp-action="Create"> Insert new produts into the table</a>
+
+@{
+    if (Model != null && Model.Count > 0)
+    {
+
+
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">ImageAlt</th>
+                    <th scope="col">ImageSource</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    for (int i = 0; i < Model.Count; ++i)
+                    {
+                                <tr>
+                                    <th scope="row">@Model[i].ID</th>
+                                    <td>@Model[i].Name</td>
+                                    <td>@Model[i].Number</td>
+                                    <td>@Model[i].Price</td>
+                                    <td>@Model[i].Description</td>
+                                    <td>@Model[i].ImageAlt</td>
+                                    <td>@Model[i].ImageSource</td>
+                                    <td><a asp-action="Edit" asp-route-ID="@Model[i].ID">edit</a></td>
+                                    <td><a asp-action="Delete" asp-route-ID="@Model[i].ID" onclick="return ConfirmDelete();">delete</a></td>
+
+                                </tr>
+
+                    }
+
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No products listed</p>
+    }
+}
+@section Scripts
+{
+    <script src="~/js/alerts.js"></script>
+}
