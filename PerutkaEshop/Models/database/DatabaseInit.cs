@@ -103,7 +103,7 @@ namespace Perutka.Eshop.Web.Models.database
         {
             eshopDbContext.Database.EnsureCreated();
 
-            if(eshopDbContext.CarouselItems.Count()==0)
+            if (eshopDbContext.CarouselItems.Count() == 0)
             {
                 IList<CarouselItem> carouselItems = GenerateCarouselItems();
                 foreach (var ci in carouselItems)
@@ -122,8 +122,18 @@ namespace Perutka.Eshop.Web.Models.database
                 }
                 eshopDbContext.SaveChanges();
             }
+
+            if (eshopDbContext.Emails.Count() == 0)
+            {
+                IList<Email> Emails = GenerateEmails();
+                foreach (var ci in Emails)
+                {
+                    eshopDbContext.Emails.Add(ci);
+                }
+                eshopDbContext.SaveChanges();
+            }
         }
-        
+
         public List<CarouselItem> GenerateCarouselItems()
         {
             List<CarouselItem> carouselItems = new List<CarouselItem>();
@@ -131,19 +141,19 @@ namespace Perutka.Eshop.Web.Models.database
 
             CarouselItem ci1 = new CarouselItem()
             {
-                
+
                 ImageSource = "/img/What_is_Information_Technology.jpg",
                 ImageAlt = "First slide"
             };
             CarouselItem ci2 = new CarouselItem()
             {
-                
+
                 ImageSource = "/img/Information-Technology-thumbnail.jpg",
                 ImageAlt = "Second slide"
             };
             CarouselItem ci3 = new CarouselItem()
             {
-                
+
                 ImageSource = "/img/how-to-become-an-information-technology-specialist160684886950141.jpg",
                 ImageAlt = "Third slide"
             };
@@ -153,6 +163,26 @@ namespace Perutka.Eshop.Web.Models.database
 
             return carouselItems;
         }
+
+        public List<Email> GenerateEmails()
+        {
+            List<Email> Emails = new List<Email>();
+            
+            Email ci1 = new Email()
+            {
+                ID=0,
+                Name = "Forgot password request email",
+                Body = "[PLACEHOLDER]"
+            };
+
+            Emails.Add(ci1);
+
+
+
+            return Emails;
+        }
+
+
 
         public List<Product> GenerateProducts()
         {
@@ -176,20 +206,20 @@ namespace Perutka.Eshop.Web.Models.database
                 Number = 5,
                 Price = 25,
                 Description = "",
-            ImageSource = "~/img/vincent.gif",
-            ImageAlt = "vincent"
-        };
+                ImageSource = "~/img/vincent.gif",
+                ImageAlt = "vincent"
+            };
 
-    Product ci3 = new Product()
-    {
-        ID = 12,
-        Name = "Product3",
-        Number = 4,
-        Price = 25,
-        Description = "",
-        ImageSource = "~/img/vincent.gif",
-        ImageAlt = "vincent"
-    };
+            Product ci3 = new Product()
+            {
+                ID = 12,
+                Name = "Product3",
+                Number = 4,
+                Price = 25,
+                Description = "",
+                ImageSource = "~/img/vincent.gif",
+                ImageAlt = "vincent"
+            };
 
             products.Add(ci1);
             products.Add(ci2);

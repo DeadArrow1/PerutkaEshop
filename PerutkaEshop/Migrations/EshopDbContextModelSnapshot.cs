@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Perutka.Eshop.Web.Models.database;
 
-namespace Perutka.Eshop.Web.Migrations.MySql
+namespace PerutkaEshop.Migrations
 {
     [DbContext(typeof(EshopDbContext))]
     partial class EshopDbContextModelSnapshot : ModelSnapshot
@@ -134,6 +134,26 @@ namespace Perutka.Eshop.Web.Migrations.MySql
                     b.HasKey("ID");
 
                     b.ToTable("CarouselItem");
+                });
+
+            modelBuilder.Entity("Perutka.Eshop.Web.Models.Entity.Email", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Email");
                 });
 
             modelBuilder.Entity("Perutka.Eshop.Web.Models.Entity.Order", b =>

@@ -53,6 +53,13 @@ namespace Perutka.Eshop.Web
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+            .ConfigureLogging(logginBuilder=> {
+                logginBuilder.ClearProviders();
+                logginBuilder.AddConsole();
+                logginBuilder.AddDebug();
+                logginBuilder.AddFile("Logs/eshop-log-{Date}.txt");
+            
+            });
     }
 }

@@ -106,6 +106,10 @@ namespace Perutka.Eshop.Web.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     ciFromDatabase.ImageAlt = product.ImageAlt;
+                    ciFromDatabase.Name = product.Name;
+                    ciFromDatabase.Number = product.Number;
+                    ciFromDatabase.Price = product.Price;
+                    ciFromDatabase.Description= product.Description;
 
                     await eshopDbContext.SaveChangesAsync();
 

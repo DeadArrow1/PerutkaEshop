@@ -22,9 +22,12 @@
 
         <div asp-validation-summary="All"></div>
 
-        <input asp-for="UserName" type="text" id="inputUsername" class="form-control" placeholder="Usename"  autofocus="">
+        <input asp-for="UserName" type="text" id="inputUsername" class="form-control" placeholder="Usename" autofocus="">
         <input asp-for="Password" type="password" id="inputPassword" class="form-control" placeholder="Password">
         <br />
+
+        <a asp-area="Security" asp-controller="Account" asp-action="ForgotPassword">Forgot passoword?</a>
+
 
         <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
         <br />

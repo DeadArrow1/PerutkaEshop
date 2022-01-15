@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Perutka.Eshop.Web.Models.database;
 
-namespace Perutka.Eshop.Web.Migrations.MySql
+namespace PerutkaEshop.Migrations
 {
     [DbContext(typeof(EshopDbContext))]
-    [Migration("20211213193907_mySQL_13.12.2021")]
-    partial class mySQL_13122021
+    [Migration("20220114201535_14.1.2022")]
+    partial class _1412022
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -136,6 +136,26 @@ namespace Perutka.Eshop.Web.Migrations.MySql
                     b.HasKey("ID");
 
                     b.ToTable("CarouselItem");
+                });
+
+            modelBuilder.Entity("Perutka.Eshop.Web.Models.Entity.Email", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Email");
                 });
 
             modelBuilder.Entity("Perutka.Eshop.Web.Models.Entity.Order", b =>

@@ -1,0 +1,38 @@
+﻿@using Perutka.Eshop.Web.Areas.Admin.Controllers
+@model Email
+
+@{
+    if (String.IsNullOrWhiteSpace(ViewBag.Action) == false)
+    {
+    <form asp-action="@ViewBag.Action" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @{ if (ViewBag.Action == nameof(EmailsController.Edit))
+            {
+                <input type="hidden" asp-for="ID" class="form-control">
+            }
+        }
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Enter name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+        </div>        
+        <div class="form-group">
+            @*<label asp-for="Body">Description</label>
+        <input asp-for="Body" type="text" class="form-control" placeholder="Enter email text">
+        <span asp-validation-for="Body" class="text-danger"></span>*@
+
+            <label asp-for="Body">Email text</label>
+            <textarea asp-for="Body" class="form-control" text-wrap:normal" type="text" placeholder="Enter email text"></textarea>
+            <span asp-validation-for="Body" class="text-danger"></span>
+
+
+
+        </div>
+
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    }
+
+}

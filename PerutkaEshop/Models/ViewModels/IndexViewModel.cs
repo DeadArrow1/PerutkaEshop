@@ -10,5 +10,6 @@ namespace Perutka.Eshop.Web.Models.ViewModels
     {
         public IList<CarouselItem> CarouselItems { get; set; }
         public IList<Product> Products { get; set; }
+
     }
 }

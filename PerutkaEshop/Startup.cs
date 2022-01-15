@@ -29,7 +29,7 @@ namespace Perutka.Eshop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EshopDbContext>(options => options.UseMySql(Configuration.GetConnectionString("MySqlConnectionString"), new MySqlServerVersion("8.0.27")));
+            services.AddDbContext<EshopDbContext>(options => options.UseMySql(Configuration.GetConnectionString("MySqlConnectionString"), new MySqlServerVersion("8.0.26")));
             
             services.AddIdentity<User, Role>()
                   .AddEntityFrameworkStores<EshopDbContext>()

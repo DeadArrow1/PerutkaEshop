@@ -96,5 +96,17 @@ body {
     background-size: cover;
 }
 
+.noparallax-footer {
+    /* The image used */
+    background-color: white;
+    /* Set a specific height */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 

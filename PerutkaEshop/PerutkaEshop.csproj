@@ -5,6 +5,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\MySql\20211020125233_MySql_1.0.0.cs" />
+    <Compile Remove="Migrations\MySql\20211020125233_MySql_1.0.0.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211020130520_MySql_1.0.1.cs" />
+    <Compile Remove="Migrations\MySql\20211020130520_MySql_1.0.1.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211103142710_InitialCreate.cs" />
+    <Compile Remove="Migrations\MySql\20211103142710_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211124143758_MySql_1.0.3.cs" />
+    <Compile Remove="Migrations\MySql\20211124143758_MySql_1.0.3.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211201142127_MySql_1.0.4.cs" />
+    <Compile Remove="Migrations\MySql\20211201142127_MySql_1.0.4.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211208142935_8.12.2021.cs" />
+    <Compile Remove="Migrations\MySql\20211208142935_8.12.2021.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211208143309_8.12.2021v2.cs" />
+    <Compile Remove="Migrations\MySql\20211208143309_8.12.2021v2.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211213193907_mySQL_13.12.2021.cs" />
+    <Compile Remove="Migrations\MySql\20211213193907_mySQL_13.12.2021.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20211215131226_final.cs" />
+    <Compile Remove="Migrations\MySql\20211215131226_final.Designer.cs" />
+    <Compile Remove="Migrations\MySql\20220114201415_14.1.2022.cs" />
+    <Compile Remove="Migrations\MySql\20220114201415_14.1.2022.Designer.cs" />
+    <Compile Remove="Migrations\MySql\EshopDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12">
@@ -12,7 +36,15 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.3" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\MySql\" />
   </ItemGroup>
 
 </Project>

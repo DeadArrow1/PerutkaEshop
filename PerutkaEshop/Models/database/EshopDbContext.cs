@@ -16,6 +16,8 @@ namespace Perutka.Eshop.Web.Models.database
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Email> Emails { get; set; }
+
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<OrderItem> OrderItems { get; set; }
